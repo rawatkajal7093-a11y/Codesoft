@@ -27,3 +27,21 @@ while True:
     ):
         print("You Win!")
         user_score += 1    
+    else:
+        print("Computer Wins!")
+        computer_score += 1
+
+        print("Score Board ")
+    print(f"You: {user_score}")
+    print(f"Computer: {computer_score}")
+
+    play_again = input("\nDo you want to play again? (yes/no): ").lower()
+
+    if play_again != "yes":
+
+        print("Final Scores")
+        print(f"You: {user_score}")
+        print(f"Computer: {computer_score}")
+        print("Thanks for playing!")
+
+        break
