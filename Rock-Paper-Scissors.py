@@ -141,7 +141,7 @@ def reset_game():
 
     status_label.config(
         text="Choose Your Move",
-        fg="#FFD54F"
+        fg="#F3C83D"
     )
 
 button_frame = Frame(root, bg="#1e1e2e")
