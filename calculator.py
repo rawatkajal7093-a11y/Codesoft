@@ -6,8 +6,12 @@ root.geometry("360x560")
 root.configure(bg="#1e1e1e")
 root.resizable(False, False)
 
+
+# Variable to store the calculator expression
 expression = StringVar()
 
+
+# Display screen
 entry = Entry(
     root,
     textvariable=expression,
@@ -20,19 +24,22 @@ entry = Entry(
 )
 entry.pack(fill=X, padx=15, pady=20, ipady=18)
 
-
+# Add button value to the display
 def press(value):
     expression.set(expression.get() + str(value))
 
 
+# Clear the display
 def clear():
     expression.set("")
 
 
+# Remove the last entered character
 def backspace():
     expression.set(expression.get()[:-1])
 
 
+# Evaluate and display the result
 def calculate():
     try:
         result = str(eval(expression.get()))
@@ -44,6 +51,8 @@ def calculate():
 frame = Frame(root, bg="#1e1e1e")
 frame.pack(padx=10, pady=10)
 
+
+# Calculator button layout
 buttons = [
     ["AC", "⌫", "%", "/"],
     ["7", "8", "9", "*"],
@@ -52,6 +61,7 @@ buttons = [
     ["0", ".", "="]
 ]
 
+# Create buttons dynamically
 for row in buttons:
     row_frame = Frame(frame, bg="#1e1e1e")
     row_frame.pack()
@@ -78,6 +88,7 @@ for row in buttons:
             bg = "#424242"
             command = lambda b=button: press(b)
 
+ # Create and display the button
         Button(
             row_frame,
             text=button,
@@ -94,4 +105,6 @@ for row in buttons:
             cursor="hand2"
         ).pack(side=LEFT, padx=6, pady=6)
 
+
+# Start the Tkinter event loop
 root.mainloop()
