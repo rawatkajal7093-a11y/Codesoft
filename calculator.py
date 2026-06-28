@@ -77,7 +77,7 @@ for row in buttons:
             command = backspace
 
         elif button == "=":
-            bg = "#00c853"
+            bg = "#37d479"
             command = calculate
 
         elif button in ["+", "-", "*", "/", "%"]:
